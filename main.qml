@@ -63,11 +63,14 @@ ApplicationWindow {
         anchors.right: dialog.right
 
         color:"#009688"
-        height: 200-captionBackground.height
+        height: resultText.height * 2
 
         Text{
             id:resultText
-            anchors.fill: parent
+            anchors.top:parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.topMargin: height/2
             font.pointSize: 80
 
             //(°F  -  32)  x  5/9 = °C
@@ -91,10 +94,14 @@ ApplicationWindow {
         anchors.top: resultBackground.bottom
         anchors.left: dialog.left
         anchors.right: dialog.right
-        height: 48
+        height: inputText.height*2
 
         Text{
-            anchors.fill: parent
+            id:inputText
+            anchors.top:parent.top
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.topMargin: height/2
 
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
